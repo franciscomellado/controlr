@@ -11,7 +11,7 @@
     {% block title %}<title>Optima-TI</title>{% endblock %}
 </head>
 <body></body>
-{% block header%}
+{% block account%}
 <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
     <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Optima-TI</a>
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -26,7 +26,7 @@
   </header>
 {% endblock %}
 
-    {% block navbar %}
+    {% block aside %}
     <div class="container-fluid">
         <div class="row">
           <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
@@ -39,7 +39,7 @@
                   </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">
+                  <a class="nav-link" href="{% url 'cotiza' %}">
                     <span data-feather="file"></span>
                     Cotización
                   </a>
@@ -105,7 +105,7 @@
             </div>
           </nav>
     {% endblock %}
-    {% block article %}
+    {% block user %}
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
         <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
           <h1 class="h2">Bienvenido {{ user.get_username }}</h1>
@@ -121,11 +121,9 @@
             </div>
           </div>
     {% endblock %}
-    {% block aside %}
-    <canvas class="my-4 w-100" id="myChart" width="900" height="380"></canvas>
-    <h2>Secciones de titulos.</h2>
-    {% endblock %}
-
+    {% block article %}
+      
+    {% endblock article %}
     {% block footer %}{% endblock %}
     {% block login %}{% endblock %}
     <script src="{% static 'css/bootstrap.min.js' %}"></script>

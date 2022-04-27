@@ -5,3 +5,5 @@ from django.template import Template
 def cotiza(request):
     return render(request, 'cotiza/cotiza.html')
 
+def cliente(request):
+    return render(request, 'cotiza/ingreclien.html')

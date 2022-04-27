@@ -12,7 +12,7 @@ class Cliente(models.Model):
     cliente_pais = models.CharField(max_length=20)
     cliente_telefono = models.CharField(max_length=12)
     cliente_email = models.EmailField(max_length=60)
-    cliente__web = models.URLField(max_length=50)
+    cliente_web = models.URLField(max_length=50)
     cliente_fechaIngreso = models.DateTimeField(auto_now_add=True)
     
 class Contacto_cliente(models.Model):

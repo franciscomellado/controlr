@@ -16,11 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from accounts import views
+from cotiza import views
 
 
 urlpatterns = [
     path('', include(('accounts.urls','accounts'), namespace='acounts')),
     path('admin/', admin.site.urls),
-    path('ordenes', views.ordenes, name="ordenes"),
+    #path('ordenes', views.ordenes, name="ordenes"),
     path('cotiza/', include('cotiza.urls')),
+    path('cliente/', include('cotiza.urls')),
 ]
