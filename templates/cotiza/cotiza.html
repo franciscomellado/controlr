@@ -1,0 +1,230 @@
+{% extends 'cotiza/base.html' %}
+{% load static %}
+
+{% block title %}<title>Cotizacion</title>{% endblock %}
+</head>
+<body>
+{% block header%}
+
+<header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Optima-TI</a>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <input class="form-control form -control-dark w-100" type="text" placeholder="Busqueda" aria-label="Search">
+    <div class="navbar-nav">
+      <div class="nav-item text-nowrap">
+        <a class="nav-link px-3" href="{% url 'accounts:logout' %}">Salir</a>
+      </div>
+    </div>
+  </header>
+{% endblock %}
+{% block navbar %}
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div class="position-sticky pt-3">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="#">
+              <span data-feather="home"></span>
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="#">
+              <span data-feather="file"></span>
+              Cotizaciones
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="shopping-cart"></span>
+              CMDB
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="users"></span>
+              Ticket's
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="bar-chart-2"></span>
+              Reportes
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="layers"></span>
+              Solicitudes
+            </a>
+          </li>
+        </ul>
+
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+          <span>Preporteria</span>
+          <a class="link-secondary" href="#" aria-label="Add a new report">
+            <span data-feather="plus-circle"></span>
+          </a>
+        </h6>
+        <ul class="nav flex-column mb-2">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Reporte Ultima Semana
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Reporte Ultimo Mes
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Reporte Ultimo Tres meses
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="file-text"></span>
+              Reporte Ultimo Año
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+{% endblock %}
+{% block article %}
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="container p-0 m-1">
+        <p class="text-end p-1">{{ user.get_username}}</p>
+      </div>
+    {% endblock %}
+    {% block menu %} 
+
+    {% endblock %} 
+    {% block aside %}
+    <div class="contaner ms-0">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link active ps-2" aria-current="page" href="#">Orden de Compra</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Estado Cotizacion</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Proveedores</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Responsable</a>
+        </li>
+      </ul>
+    </div>
+    <div class="container p-0 m-0">
+      <h4 class="fs-5 p-2">Servicio de cotizaciones.</h4>
+      <p class="ps-2">Ingreso de información de cliente</p>
+    </div>
+    <div class="container p-0 m-0">
+      <div class="row p-0">
+        <div class="col-12 p-3">Datos de Empresa</div>
+        <div class="col-5">
+            <div class="input-group mb-2">
+              <span class="input-group-text">Nombre Empresa</span>
+                <input type="text" aria-label="Primer Nombre" class="form-control">
+            </div>
+       
+            <div class="input-group mb-2">
+              <span class="input-group-text">Rut</span>
+                <input type="text" aria-label="Rut" class="form-control">
+            </div>
+          <div class="col">
+            <div class="input-group mb-2">
+              <span class="input-group-text">Direccion</span>
+                <input type="text" aria-label="Direccion" class="form-control">
+            </div>
+          </div>
+          <div class="col">
+            <div class="input-group mb-2">
+              <span class="input-group-text">Ciudad</span>
+                <input type="text" aria-label="Primer Nombre" class="form-control">
+            </div>
+          </div>
+          <div class="col">
+            <div class="input-group mb-2">
+              <span class="input-group-text">Provincia</span>
+                <input type="text" aria-label="Primer Nombre" class="form-control">
+            </div>
+          </div>
+          <div class="col">
+            <div class="input-group mb-2">
+              <span class="input-group-text">Pais</span>
+                <input type="text" aria-label="Primer Nombre" class="form-control">
+            </div>
+          </div>
+          <div class="col">
+            <div class="input-group mb-2">
+              <span class="input-group-text">Telefono</span>
+                <input type="text" aria-label="Primer Nombre" class="form-control">
+            </div>
+          </div>
+          <div class="col">
+            <div class="input-group mb-2">
+              <span class="input-group-text">Celular</span>
+                <input type="text" aria-label="Primer Nombre" class="form-control">
+            </div>
+          </div>
+          <div class="col">
+            <div class="input-group mb-2">
+              <span class="input-group-text">Email</span>
+                <input type="text" aria-label="Primer Nombre" class="form-control">
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="container">
+            <div class="row p-0">
+              <div class="col">
+                <div class="input-group mb-2">
+                  <span class="input-group-text">Nombre Contacto</span>
+                    <input type="text" aria-label="Primer Nombre" class="form-control">
+                </div>
+                <div class="input-group mb-2">
+                  <span class="input-group-text">Apellido</span>
+                    <input type="text" aria-label="Primer Nombre" class="form-control">
+                </div>
+                <div class="input-group mb-2">
+                  <span class="input-group-text">Email</span>
+                    <input type="text" aria-label="Primer Nombre" class="form-control">
+                </div>
+                <div class="input-group mb-2">
+                  <span class="input-group-text">Celular</span>
+                    <input type="text" aria-label="Primer Nombre" class="form-control">
+                </div>
+                <div class="input-group mb-2">
+                  <span class="input-group-text">Cargo</span>
+                    <input type="text" aria-label="Primer Nombre" class="form-control">
+                </div>
+                <div class="input-group mb-2">
+                  <span class="input-group-text">Observaciones</span>
+                    <textarea type="form-control" aria-label="Primer Nombre" class="form-control"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-4">
+      <div class="row">
+        <div class="d-grid gap-2 d-md-block">
+          <a href="#" class="btn btn-primary" role="button" data-bs-toggle="button">Ingresar</a>
+        </div>
+      </div>
+    </div>
+    {% endblock %}
+    {% block footer %}{% endblock %}
+    {% block login %}{% endblock %}
